@@ -44,7 +44,7 @@ def task18():
 # Ф, Щ, Ъ – 10 очков. 
 # Напишите программу, которая вычисляет стоимость введенного пользователем слова. 
 # Будем считать, что на вход подается только одно слово, которое содержит либо только английские, либо только русские буквы
-def task20():
+def task20_1():
     dct = dict(
         aeioulnstrавеинорст = 1,
         dgдклмпу = 2,
@@ -63,3 +63,22 @@ def task20():
                     total += dct[key]
     print(f"Очки: {total}")
 
+def task20_2():
+    from re import findall
+    word = input("Введите слово: ").lower().strip()
+    dct = dict(
+        aeioulnstrавеинорст = 1,
+        dgдклмпу = 2,
+        bcmpбгёья = 3,
+        fhvwyйы = 4,
+        kжзхцч = 5,
+        jxшэю = 8,
+        qzфщъ = 10
+    )
+    total = 0
+    for regex in dct:
+        pattern = r"[{}]".format(regex)
+        finded = findall(pattern, word)
+        if len(finded) > 0: total += len(finded) * dct[regex]
+
+    print(f"Очки: {total}")
