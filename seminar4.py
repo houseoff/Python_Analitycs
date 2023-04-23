@@ -31,8 +31,26 @@ def task25_2():
 # идущих подряд, слова разделены одним или большим числом пробелов
 # Определите, сколько различных слов содержится в этом тексте
 def task27():
-    string = "She sells sea shells on the sea shore The shells that she sells are sea shells I'm sure. So if she sells seashells on the sea shore I'm sure that the shells are sea shore shells"
+    string = """She sells sea shells on the sea shore 
+        The shells that she sells are sea shells I'm sure. 
+        So if she sells seashells on the sea shore 
+        I'm sure that the shells are sea shore shells"""
     st = set(string.lower().replace('.','').split())
     print(len(st))
+
+# Ваня и Петя поспорили, кто быстрее решит следующую задачу: 
+# "Задана последовательность неотрицательных целых чисел. 
+# Требуется определить значение наибольшего элемента последовательности, 
+# которая завершается первым встретившимся нулем (число 0 не входит в последовательность)"
+# Однако 2 друга оказались не такими смышлеными. Никто из ребят не смог до конца сделать это задание. 
+# Они решили так: у кого будет меньше ошибок в коде, тот и выиграл спор. За помощью товарищи обратились к Вам, студентам
+def task29():
+    maxx = 0
+    while (n:=int(input("Введите число: "))) != 0:
+        if n > maxx: maxx = n
+    print(f"Максимум: {maxx}")
+
+task29()
+    
 
 
